@@ -1,4 +1,5 @@
-PENDING — this package does not yet have a verified Render deployment URL.
-Local preview after setup: http://localhost:3000
-Deployment configuration and instructions: render.yaml and README.md.
-Replace this file with the actual live URL after deployment and verification.
+https://folio-docs-hyar.onrender.com/
+
+Verified in Chrome on 2026-11-09: deployed document library loads; /api/health returns {"status":"ok"} after a database query.
+Full live editing, import, sharing, and persistence checks remain pending.
+Demo users: Maya Chen, Alex Morgan, Sam Rivera. Use the in-app switcher; no passwords.

@@ -1,6 +1,10 @@
 # Folio submission inventory
 
-**Status: source/review package prepared; final submission incomplete.**
+**Status: Render app deployed and basic availability checked; video and Drive delivery remain incomplete.**
+
+Live product: https://folio-docs-hyar.onrender.com/
+
+Source repository: https://github.com/meet0806/folio-docs (private; source is also included in the ZIP).
 
 ## Included
 
@@ -17,12 +21,12 @@
 | Architecture and prioritization note | `ARCHITECTURE.md` |
 | AI usage and verification note | `AI_WORKFLOW.md` |
 | 3–5 minute recording outline | `WALKTHROUGH_PLAN.md` |
-| Deployment URL status file | `LIVE_URL.txt` — pending, no live URL |
+| Deployment URL status file | `LIVE_URL.txt` — actual Render URL and verification scope |
 | Walkthrough URL status file | `WALKTHROUGH_URL.txt` — pending, no recording |
 | Sample upload files | `samples/team-brief.md`, `samples/meeting-notes.txt` |
 | Exact packaged file list and SHA-256 digests | `FILE_MANIFEST.json` (generated in the share folder) |
 
-The updated ZIP contains one top-level `Folio-Submission-Updated` folder. `FILE_MANIFEST.json` lists every other packaged file, its byte size, and SHA-256 digest; it excludes itself. Dependencies, local databases, build output, caches, secrets, and the superseded scaffold are not included.
+The updated ZIP contains one top-level `Folio-Submission-Render` folder. `FILE_MANIFEST.json` lists every other packaged file, its byte size, and SHA-256 digest; it excludes itself. Dependencies, local databases, build output, caches, secrets, and the superseded scaffold are not included.
 
 ## Verification performed
 
@@ -35,7 +39,8 @@ The updated ZIP contains one top-level `Folio-Submission-Updated` folder. `FILE_
 ## Required before final submission
 
 - [ ] Verify a clean Linux dependency installation and PostgreSQL behavior.
-- [ ] Deploy to Render, verify the live user flow, and replace `LIVE_URL.txt` with the real URL.
+- [x] Deploy to Render and record the actual URL; verify library loading and database-backed health endpoint in Chrome.
+- [ ] Verify the complete live editing/import/sharing flow and persistence after refresh.
 - [ ] Complete the remaining visual/mobile, accessibility, and recovery checks listed in `BROWSER_VERIFICATION.md`. No screenshots or demo GIF are currently included.
 - [ ] Record a 3–5 minute walkthrough, host it, and replace `WALKTHROUGH_URL.txt` with the real URL.
 - [ ] Upload the completed materials to the intended Google Drive account and obtain a reviewer-accessible folder link.
@@ -47,6 +52,6 @@ Use the in-app switcher to select Maya Chen (`maya@folio.demo`), Alex Morgan (`a
 
 ## What works and what is scoped out
 
-Implemented: create/rename/edit/reopen documents; rich-text controls; debounced saves; text/Markdown import; owner/editor/viewer grants; accessible-document filtering; SQLite persistence; version-based conflict rejection; formatted HTML export. Backend behavior is tested locally and core desktop Chrome flows were checked; full browser coverage and hosting verification remain pending.
+Implemented: create/rename/edit/reopen documents; rich-text controls; debounced saves; text/Markdown import; owner/editor/viewer grants; accessible-document filtering; SQLite persistence; version-based conflict rejection; formatted HTML export. Backend behavior is tested locally and core desktop Chrome flows were checked; Render library loading and database connectivity were checked; full live workflow and broader browser coverage remain pending.
 
-Intentionally omitted: real-time merge/presence, comments, full Word compatibility, real identity, and version-history browsing. Hosting/upload/video are pending delivery work, not intentional feature cuts. See `ARCHITECTURE.md` for the next 2–4 hours of work.
+Intentionally omitted: real-time merge/presence, comments, full Word compatibility, real identity, and version-history browsing. Drive upload and video are pending delivery work, not intentional feature cuts. See `ARCHITECTURE.md` for the next 2–4 hours of work.

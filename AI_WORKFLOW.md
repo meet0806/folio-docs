@@ -20,7 +20,7 @@ OpenAI Codex assisted with scoping, source implementation, documentation, comman
 - Repeated seeding was changed to avoid restoring a revoked seed grant or overwriting the intended persisted state.
 - Save waiting logic was adjusted to stop on a failed in-flight request, and editor history was reset when switching documents to prevent undo from crossing document boundaries.
 - Browser testing exposed escaped apostrophes in Markdown imports. Inline-token decoding was corrected and covered by a seventh regression test.
-- No generated deployment URL, screenshot, or walkthrough was accepted as evidence. Those deliverables are marked pending.
+- No invented deployment URL, screenshot, or walkthrough was accepted as evidence. The user supplied the actual Render URL; Chrome confirmed library loading and database health. Screenshots and walkthrough remain pending.
 
 ## How correctness was checked
 
@@ -28,4 +28,4 @@ Seven automated tests ran successfully. They cover authorization and conflicts, 
 
 ## Verification still required
 
-Core Chrome interaction checks were subsequently completed; see BROWSER_VERIFICATION.md. Complete visual, mobile, and accessibility checks remain pending. PostgreSQL execution, a clean Linux install, live Render deployment, and the recorded walkthrough are also pending. The automated tests support backend behavior on SQLite. The targeted Chrome checks provide additional interaction evidence, but neither establishes complete frontend coverage or a verified hosted environment. Completing those checks is the next priority.
+Core Chrome interaction checks were subsequently completed; see BROWSER_VERIFICATION.md. Complete visual, mobile, and accessibility checks remain pending. Render is deployed; Chrome confirmed library loading and a database-backed health response. Full PostgreSQL contract testing, a reproducible clean Linux install, live workflow checks, and the recorded walkthrough remain pending. The automated tests support backend behavior on SQLite. The targeted Chrome checks provide additional interaction evidence, but neither establishes complete frontend coverage or complete hosted workflow coverage. Completing those checks is the next priority.

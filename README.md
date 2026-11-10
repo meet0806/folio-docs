@@ -2,7 +2,9 @@
 
 A lightweight team document editor built for the Ajaia exercise. Create a document, write with rich-text formatting, import a text file, and share it with another demo account.
 
-**Submission status:** the local implementation, seven automated tests, and production build are complete. Core Chrome flows have been exercised; broader visual/mobile checks, Render deployment, Google Drive upload, and the walkthrough recording are pending. See [SUBMISSION.md](SUBMISSION.md) for the exact status; no live URL or video is claimed in this package.
+**Live demo:** [https://folio-docs-hyar.onrender.com/](https://folio-docs-hyar.onrender.com/)
+
+**Submission status:** deployed on Render. Chrome checks on 2026-11-09 confirmed the document library loads and the database-backed health endpoint returns OK. Seven local automated tests and the production build passed; core local Chrome flows were exercised. Full live workflow checks, broader visual/mobile checks, Google Drive upload, and the walkthrough recording remain pending. See [SUBMISSION.md](SUBMISSION.md).
 
 ## Run locally
 
@@ -63,7 +65,7 @@ npm run build
 
 The seven tests cover permission enforcement and revocation, stale-write conflicts, formatting and access persistence after database reopen, seed idempotency, content/import validation, and HTTP behavior including upload limits and cross-origin protection. They use temporary SQLite databases and an ephemeral HTTP port; they do not modify the development database.
 
-The last local run passed all seven tests and the production build. A server startup was also observed. Core Chrome interactions were subsequently checked: creation, renaming, formatting, autosave, refresh, shared editing, viewer controls, and Markdown import. See [BROWSER_VERIFICATION.md](BROWSER_VERIFICATION.md) for exact evidence and remaining checks. PostgreSQL execution and a clean Linux/Render installation have not been verified. These are outstanding checks, not inferred passes.
+The last local run passed all seven tests and the production build. A server startup was also observed. Core Chrome interactions were subsequently checked: creation, renaming, formatting, autosave, refresh, shared editing, viewer controls, and Markdown import. See [BROWSER_VERIFICATION.md](BROWSER_VERIFICATION.md) for exact evidence and remaining checks. The live Render library and database-backed health endpoint were verified in Chrome on 2026-11-09. Full PostgreSQL permission/conflict contract testing, a reproducible clean Linux install, and live create/edit/import/share flows remain outstanding.
 
 An additional PostgreSQL permission/conflict contract runs when `TEST_DATABASE_URL` is set. Use a **dedicated disposable test database**, because this test creates schema and leaves test records. On PowerShell:
 

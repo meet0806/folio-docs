@@ -19,7 +19,7 @@ document service: validation, access checks, import conversion
            |
       database adapter
         /          \
-local SQLite    PostgreSQL on Render (pending verification)
+local SQLite    PostgreSQL on Render (health checked)
 ```
 
 React/Vite builds the client. Tiptap provides the rich-text document model and editing behavior. A small underline extension supplements StarterKit. Express serves the production assets and API from one origin, which keeps local setup and deployment simple. Development embeds Vite middleware in the same server.
@@ -50,11 +50,11 @@ The server validates node types, nesting, formatting marks, titles, and content 
 
 Seven automated tests passed on local SQLite and HTTP. They exercise denied access, viewer restrictions, owner-only sharing, revocation, conflict rejection, data persistence, seed preservation, imports, and invalid requests. The client production build passed, and the local server started successfully.
 
-Core Chrome interaction checks were completed and are documented in BROWSER_VERIFICATION.md. Broader visual/mobile checks and PostgreSQL/Render deployment remain unverified. The dependency lockfile came from an offline Windows installation, so Linux build dependencies need a clean deployment check. Demo authentication is deliberately bypassable through account switching. The list API loads full accessible documents, which is acceptable for this small exercise but should become a paginated summary endpoint at larger scale. Access updates are enforced on requests; other open tabs do not receive push notifications.
+Core Chrome interaction checks were completed and are documented in BROWSER_VERIFICATION.md. The Render library and database health endpoint were verified in Chrome; broader visual/mobile checks and full live PostgreSQL workflows remain unverified. The dependency lockfile came from an offline Windows installation, so Linux build dependencies need a clean deployment check. Demo authentication is deliberately bypassable through account switching. The list API loads full accessible documents, which is acceptable for this small exercise but should become a paginated summary endpoint at larger scale. Access updates are enforced on requests; other open tabs do not receive push notifications.
 
 ## Next 2–4 hours
 
-1. Verify a clean Linux build and PostgreSQL contract, deploy on Render, and exercise the live API.
+1. Verify a reproducible clean Linux build and PostgreSQL contract, and exercise the full live workflow on the deployed Render app.
 2. Check formatting, keyboard navigation, autosave recovery, and sharing in desktop/mobile browsers; add a focused browser regression test.
 3. Record the walkthrough and complete the Drive submission links.
 4. If time remains, add durable draft recovery and clearer handling of account changes in other tabs.
