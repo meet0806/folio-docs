@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: folio-docs
+    runtime: node
+    plan: free
+    buildCommand: npm install --package-lock=false --include=dev --include=optional && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: 24.18.0
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: folio-db
+          property: connectionString
+databases:
+  - name: folio-db
+    plan: free
+    databaseName: folio
+    user: folio

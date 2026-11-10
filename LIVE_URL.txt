@@ -1,0 +1,4 @@
+PENDING — this package does not yet have a verified Render deployment URL.
+Local preview after setup: http://localhost:3000
+Deployment configuration and instructions: render.yaml and README.md.
+Replace this file with the actual live URL after deployment and verification.

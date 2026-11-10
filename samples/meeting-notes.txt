@@ -1,0 +1,9 @@
+Team planning notes
+
+Goal: agree on the next small product improvement.
+
+Maya: prepare the first draft.
+Alex: review the user flow and add feedback.
+Sam: check the wording and review the final version.
+
+Next step: import this file, format the title, and share it with a teammate.
